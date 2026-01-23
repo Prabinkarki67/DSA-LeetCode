@@ -6,6 +6,9 @@
 #         self.right = right
 class Solution:
     def hasPathSum(self, root: Optional[TreeNode], target: int) -> bool:
+
+
+        ##my thinking:: first do travelsal doing add to all leaf node and form list and see if that list has target
         ans = []
         add = 0
         def fill_ans(root, ans, add):
@@ -15,7 +18,7 @@ class Solution:
             add += root.val
 
 
-            if root.left is None and root.right is None:
+            if root.left is None and root.right is None:  #leafnode
                 ans.append(add)
                 return
 
