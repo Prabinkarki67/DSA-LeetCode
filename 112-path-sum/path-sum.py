@@ -13,7 +13,7 @@ class Solution:
         add = 0
         def fill_ans(root, ans, add):
             if root is None:
-                return False
+                return 
                 
             add += root.val
 
