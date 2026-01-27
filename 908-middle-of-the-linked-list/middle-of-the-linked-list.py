@@ -5,6 +5,7 @@
 #         self.next = next
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        #first find no of nodes
         def trav(head):
             curr=head
             counter = 0
@@ -13,6 +14,8 @@ class Solution:
                 curr=curr.next
             return counter
         count = trav(head)
+
+        #return node after middle node
         def res(head, counter):
             curr=head
             indx=1
@@ -21,9 +24,10 @@ class Solution:
                     return curr
                 indx+=1
                 curr=curr.next
+        
         if count%2!=0:  #odd
             n= (count+1)//2
-        else:
+        else:           #even
             n=(count+2)//2
         
         return res(head, n)
