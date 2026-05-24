@@ -14,6 +14,6 @@ class Solution:
 
             else:  # i == '1'
                 count_one += 1
-                max_len = max(max_len, 2 * min(count_zero, count_one))
+            max_len = max(max_len, 2 * min(count_zero, count_one))
 
         return max_len
