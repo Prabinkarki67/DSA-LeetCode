@@ -1,15 +1,15 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         hash_map = {}
-        for i in s:
-            if i not in hash_map:
-                hash_map[i] = 1
+        for i, ch in enumerate(s):
+            if ch not in hash_map:
+                hash_map[ch] = [1, i]
             else:
-                hash_map[i] += 1
+                hash_map[ch][0] += 1
 
-        for key, value in hash_map.items():
-            if value == 1:
-                return s.index(key)
+        for count, idx in hash_map.values():
+            if count == 1:
+                return idx
         
 
         return -1
